@@ -17,16 +17,16 @@ to the Branch office, and ACL-based restriction of Branch access to HQ resources
 
 ## IP Addressing
 IP Addressing Plan (VLSM)
-Network                	VLAN	                    Subnet	                                        Gateway
-Sales	                   10	                      192.168.10.0/24                                 	192.168.10.1
-HR	                     20                      	192.168.20.0/24                                 	192.168.20.1
-IT	                     30                     	192.168.30.0/24	                                  192.168.30.1
-Branch LAN                _                       192.168.40.0/24	                                  192.168.40.1
-HQ–ISP link	              _                      	100.64.0.0/30	                                          _
-ISP–Branch link           _                       100.64.0.4/30	                                          _
-Server                  	99	                      192.168.99.0/24	                                  192.168.99.1
-GRE Tunnel	 	            _            172.16.0.0/30	R-HQ: .1 / R-BRANCH: .2
-
+| Network | VLAN | Subnet | Gateway |
+|---|---|---|---|
+| Sales | 10 | 192.168.10.0/24 | 192.168.10.1 |
+| HR | 20 | 192.168.20.0/24 | 192.168.20.1 |
+| IT | 30 | 192.168.30.0/24 | 192.168.30.1 |
+| Branch LAN | — | 192.168.40.0/24 | 192.168.40.1 |
+| HQ–ISP link | — | 100.64.0.0/30 | — |
+| ISP–Branch link | — | 100.64.0.4/30 | — |
+| Server | 99 | 192.168.99.0/24 | 192.168.99.1 |
+| GRE Tunnel | — | 172.16.0.0/30 | R-HQ: .1 / R-BRANCH: .2 |
 ## Key Verification
 - `show ip route` — OSPF routes learned across sites, including the tunnel subnet
 - `show interfaces tunnel 0` — GRE tunnel up, traffic passing
